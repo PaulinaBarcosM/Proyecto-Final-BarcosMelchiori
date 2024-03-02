@@ -1,0 +1,362 @@
+// tipografia 
+.clase-tipografia{
+    @extend %tipografia;
+}
+
+// barra de navegacion
+header{
+    @extend %disposicion;
+    h1{
+        @include positionH1 (italic, 45px, 10px 10px, whitesmoke);
+    }
+    nav{
+        div{
+            ul{
+                @extend %disposicion-ul;
+                a{  
+                    @extend %disposicion-a;
+                }
+            }
+        }
+    }
+}
+
+// tamaño imagenes
+main{
+    div{
+        div{
+            img{
+                @extend %tamaño-imagenes;
+            }
+        }
+    }
+}
+
+//  estilos del footer
+footer{
+    text-align: $texa-footer;
+    margin-top: $matp-footer;
+    ul{
+        li{
+            display: $dis-footer;
+            color: $col-footer;
+            a{
+                @extend %disposicion-aF;
+            }
+    
+        }
+    }
+}
+
+// body index
+/* body index */
+#body-index{
+    background-image: url(../img/img-fondoindex2.jpg);
+    background-repeat: map-get($body-index, back-repeat );
+    background-position: map-get($body-index, back-position );
+    background-size: map-get($body-index, back-size );
+    color: map-get($body-index, color );
+    .contenedor-index{
+        .h2-index{
+            text-align: map-get($main-h2index, texalign );
+            margin: map-get($main-h2index, margen );
+        } 
+        .parrafo-index{
+            text-align: map-get($main-pindex, texalign );
+        }
+    }
+}
+
+// body pary
+/* body pary */
+#body-pary{
+    @extend %bodys-fondo;
+    .contenedor-pary{
+        p{
+            @extend %parrafo-pary;
+        }
+        .photos-uno-pary .photos-dos-pary{
+            @extend %photos-pary;
+        }
+    }
+}
+
+// body urban
+/* body urban */
+#body-urban{
+    @extend %bodys-fondo;
+    .contenedor-urban{
+        .photos-urban{
+            display: map-get($photos-urban, disp );
+            gap: map-get($photos-urban, gp );
+            margin: map-get($photos-urban, margen );
+        }
+        .h2-urban{
+            color: map-get($h2-urban, colors );
+            text-align: map-get($h2-urban, texalign );
+        }
+    }
+}
+
+// body classic
+/* body classic */
+#body-classic{
+    @extend %bodys-fondo;
+    .contenedor-classic{
+        .photos-classic{
+            @extend %photos-classic;
+        }
+    }
+    .footer-classic{
+        @extend %footer-classic;
+    }
+}
+
+// body long in
+/* body long in*/
+#body-longin{
+    background-image: url(../img/imgbodylongin.jpg);
+    @extend %body-longin;
+}
+
+.tipografia-boostrap{
+    @extend %tipografia-bs;
+}
+.tipografia-boostrap-hover{
+    @extend %tipografia-bs-hover;
+}
+.color-enter{
+    @extend %color-enter-bs;
+}
+
+// main longin
+/* main longin*/
+.main-longin{
+    @extend %main-longin;
+    .h2-longin{
+        @extend %h2-longin;
+        transition: $transition;
+    }
+    .h2-longin:hover{
+        transition: $transition;
+        background-color: $background-color;
+    }
+    .h3-longin{
+        border: $borde;
+        padding: $espacio-interno;
+        transition: $transition;
+    }
+    .h3-longin:hover{
+        transition: $transition;
+        background-color: $background-color;
+    }
+    .h4-longin{
+        @extend %h4-longin;
+        transition: $transition;
+    }
+    .h4-longin:hover{
+        background-color: grey;
+        transition: $transition;
+        transform: scale(1.3);
+    }
+    .parrafos-longin{
+        // hacer un extend
+        border: $borde;
+        padding: $espacio-interno;
+        margin-right: $margin-right;
+        transition: $transition;
+    }
+    .parrafos-longin:hover{
+        transition: $transition;
+        background-color: $background-color;
+    }
+}
+
+// footer longin
+/* footer longin */
+.contenedor-boostrap-longin{
+    @extend %footer-bs;
+}
+.contenedor-instagram, .contenedor-twitter{
+    @extend %contenedores-igtw;
+}
+.boton-twitter, .boton-instagram{
+    @extend %boton-igtw;
+}
+.titulo-instagram{
+    @extend %titulo-ig;
+}
+
+// media querie tablet
+/* media querie tablet */
+@media screen and (min-width:900px){
+    // index
+    /* mq tablet index */
+    #body-index{
+        background-image: url(../img/fondoprincipalnegybla.jpg);
+        .contenedor-index{
+            .h2-index{
+                font-weight: 40px;
+            }
+            .parrafo-index{
+                text-shadow: 5px 5px 15px grey;
+            }
+        }
+    }
+
+    // artistic pary
+    /* mq tablet pary */
+    .contenedor-pary{
+        margin: $mar-contenedorpary;
+        img{
+            margin: $mar-tablet;
+        }
+        .parrafo-pary{
+            font-size: 30px;
+        }
+    }   
+    
+    // classic
+    /* mq tablet classic */
+    .contenedor-classic{
+        div{
+            div{
+                img{
+                    margin: $mar-tablet;
+                }
+            }
+        }
+        .photos-dos-classic{
+            display: $display-grid;
+            grid-template-columns: repeat(2, 1fr);
+            img{
+                padding: $img-tabletclassic;
+            }
+            .img-siete-classic, .img-ocho-classic{
+                grid-column: map-get($img-gridcolumn, gridcolumn);
+            }
+        }
+    }
+
+    // urban
+    /* mq tablet urban */
+    .contenedor-urban{
+        .photos-urban{
+            display: $display-grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            img{
+                height: $height;
+                width: $width;   
+            }
+            .img-trece-urban{
+                grid-column: map-get($img-gridcolum, gridcolum);
+            }
+        }
+    }
+
+    // longin
+    /* mq tablet longin */
+    .main-longin{
+        margin-right: $margin-right;
+        .div-contenedor-dos{
+            .caja-h4{
+                justify-content: center;
+                margin-left: 30%;
+            }
+        }
+    }
+}
+
+// media querie desktop
+/* media querie desktop */
+@media screen and (min-width:1024px){
+    // index
+    /* mq desktop index */
+    #body-index{
+        background-image: url(../img/img-indexDesktop.jpeg);
+        background-repeat: map-get($body-index, back-repeat );
+        background-position: map-get($body-index, back-position );
+        background-size: map-get($body-index, back-size );
+    }
+    .contenedor-index{
+        .parrafo-index{
+            text-shadow: 5px 5px 15px grey;
+        }
+    }
+
+    // artistic pary
+    /* mq desktop pary */
+    .contenedor-pary{
+        p{
+            @include imgDesktopPary (whitesmoke, center, 30px);
+        }
+        div{
+            div{
+                img{
+                    width: $width;
+                    height: $height;
+                    padding: $img-desktop;
+                }
+            }
+        }
+        .photos-uno-pary{
+            display: $display-grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .photos-dos-pary{
+            display: $display-grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // classic
+    /* mq desktop classic */
+    .contenedor-classic{
+        .photos-classic{
+            div{
+                img{
+                    padding: $img-tabletclassic;
+                }
+            }
+            .photos-uno-classic{
+                display: $display-grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photos-dos-classic{
+                .img-siete-classic, .img-ocho-classic{
+                    grid-column: map-get($img-gridcolumn, gridcolumn);
+                    height: $height;
+                    width: $width;
+                }
+            }
+        }
+    }
+        
+    // urban
+    /* mq desktop urban */
+    .contenedor-urban{
+        .img-tres-urban{
+            display: none
+        }
+        .photos-urban{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            .img-doce-urban{
+                grid-column: map-get($img-gridcolumn, gridcolumn);
+            }
+        }
+    }
+
+    // longin
+    /* mq desktop longin */
+    .main-longin{
+        margin-right: 50%;
+        .div-contenedor-dos{
+            .caja-h4{
+                justify-content: center;
+                margin-left: 60%;
+            }
+        }
+    }
+}

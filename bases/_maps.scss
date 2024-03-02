@@ -1,0 +1,36 @@
+// para el body-index
+$body-index: (
+    color: white,
+    back-repeat: no-repeat,
+    back-position: center,
+    back-size: cover,
+);
+
+$main-h2index: (
+    texalign: center,
+    margen: 200px 0 70px 0,
+);
+
+$main-pindex: (
+    texalign: center,
+);
+
+// para el body-urban
+$photos-urban: (
+    disp: grid,
+    gp: 2rem,
+    margen: 3rem 2rem,
+);
+// para el h2 de urban
+$h2-urban: (
+    colors: whitesmoke,
+    texalign: center,
+);
+
+// mq de tablet para img
+$img-gridcolumn: (
+    gridcolumn: span 2,
+);
+$img-gridcolum: (
+    gridcolum: span 3,
+)

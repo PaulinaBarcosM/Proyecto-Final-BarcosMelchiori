@@ -1,0 +1,13 @@
+// Para los h1 del header
+@mixin positionH1 ($fs, $fsz, $pd, $cl){
+    font-style: $fs;
+    font-size: $fsz;
+    padding: $pd;
+    color: $cl;
+}
+
+@mixin imgDesktopPary ($cl, $cnr, $fs){
+    color: $cl;
+    text-align: $cnr;
+    font-size: $fs;
+}
